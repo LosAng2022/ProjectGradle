@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+jar {
+    baseName("RecreationСenter")
+    version("1.5.4")
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/joda-time/joda-time
+    implementation 'joda-time:joda-time:2.10.14'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+}
+
+task privet{
+    print("2+2 pavno " + (2 + 2))
+    print(", privet!")
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application{
+ mainClassName("ru.my.gradle.GradleApp")
+}
